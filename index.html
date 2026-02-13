@@ -1,0 +1,22 @@
+<!doctype html>
+    <head>
+        <title>JavaScript Interview Questions</title>
+    </head>
+    <body>
+        <p>Rest Parameter: Takes variable number of arguments and turns them into an array</p>
+        <p>Spread Operator: Takes an array or an object and spreads it into individual values</p>
+    </body>
+
+    <script>
+        // Rest Parameter
+        function Rest(...num) {
+            console.log('Rest Parameter: ', num);
+        }
+
+        Rest(1,2,3);
+
+        // Spread Operator
+        let arr = [1,2,3];
+        console.log('Spread Operator: ', ...arr);
+    </script>
+</html>
