@@ -1,0 +1,21 @@
+<!doctype html>
+  <head>
+    <title>Currying</title>
+  </head>
+  <body>
+    <p>Currying: Currying is a technique where a function with multiple arguments is transformed into a sequence of functions, each taking one argument.</p>
+  
+    <script>
+      // Currying
+      function add(a) {
+        return function(b) {
+          return function(c) {
+            return a + b + c;
+          }
+        }
+      }
+
+      console.log('Addition: ', add(1)(2)(3));
+    </script>
+  </body>
+</html>

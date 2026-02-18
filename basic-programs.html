@@ -1,0 +1,115 @@
+<!doctype html>
+  <head>
+    <title>Basic Programs</title>
+  </head>
+  <body>
+    <p>Basic Programs: You can see output in console.</p>
+
+    <script>        
+      // Count Alphabet & Numbers (Different Versions)
+      let arr_version1 = ['a', 1, 'b', 2, 3, 'c', 'd', 4];
+      let arr_version2 = ['a', '1', 'b', '2', '3', 'c', 'd', '4'];
+      let arr_version3 = ['abc', 1, 'bca', 255, 3, 'c', 'd', 4];
+      let arr_version4 = ['bc123'];
+
+      let numbers = 0;
+      let alphabets = 0;
+
+      // Version 1
+      arr_version1.forEach((item) => {
+        if(typeof item === 'number') {
+          numbers++;
+        }else if(typeof item === 'string' && /^[a-zA-Z]$/.test(item)) {
+          alphabets++;
+        }
+      });
+
+      // Version 2
+      arr_version2.forEach((item) => {
+        if(/^[0-9]$/.test(item)) {
+          numbers++;
+        }else if(typeof item === 'string' && /^[a-zA-Z]$/.test(item)) {
+          alphabets++;
+        }
+      });
+
+      // Version 3
+      arr_version3.forEach((item) => {
+        if(typeof item === 'number') {
+          numbers++;
+        }else if(typeof item === 'string') {
+          alphabets += item.replace(/[^a-zA-Z]/g, '').length;
+        }
+      });
+
+      // Version 4
+      arr_version4[0].split('').forEach((item) => {
+        if(/[0-9]/.test(item)) {
+          numbers++;
+        }else if(/[a-zA-Z]/.test(item)) {
+          alphabets++;
+        }
+      });
+
+      console.log('Alphabets is: ', alphabets);
+      console.log('Numbers is: ', numbers);
+
+      // Factorial
+      function factorial(n) {
+        let fact = 1;
+        for(let i = 1; i <= n; i++) {
+          fact = fact*i;
+        }
+        return fact;
+      }
+
+      console.log('Factorial is: ', factorial(5));
+
+      // Find Unique Value or Remove Duplicacy
+      let arr_unique = [1,2,3,4,5,5,4,3,2,1];
+      let final_unique = [...new Set(arr_unique)];
+
+      console.log('Final: ', final_unique);
+
+      // Count Occurance of Values
+      let arr_occurance = [1,2,3,4,5,5,4,3,2,1];
+      let count_occurance = {};
+
+      arr_occurance.forEach((item) => {
+        count_occurance[item] = (count_occurance[item] || 0) + 1;
+      });
+
+      console.log('Count Occurance: ', count_occurance);
+
+      // Display Duplicate Values
+      let arr_duplicate = [1,2,3,4,5,5,4,3,2,1];
+      let count_duplicate = {};
+
+      arr_duplicate.forEach((item) => {
+        count_duplicate[item] = (count_duplicate[item] || 0) + 1;
+      });
+
+      let duplicate = Object.keys(count_duplicate).filter(key => count_duplicate[key] + 1);
+      console.log('Count Duplicate: ', duplicate);
+
+      // Sum of Values
+      let arr_sum = [1,2,3,4,5,5,4,3,2,1];
+      let final_sum = arr_sum.reduce((a, b) => a + b, 0);
+
+      console.log('Sum : ', final_sum);
+
+      // Count Vowels
+      let str = 'Tushar';
+      let vowels = ['a','e','i','o','u'];
+      let count = 0;
+
+      for(let i = 0; i < str.length; i++) {
+        if(vowels.includes(str[i])) {
+          count++;
+        }
+      }
+
+      console.log('Vowels: ', count);
+    </script>
+  </body>
+</html>
