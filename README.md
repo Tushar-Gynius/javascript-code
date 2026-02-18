@@ -1,2 +1,2 @@
 # javascript-code
-JavaScript Interview - Questions Answers
+JavaScript Interview – Questions & Answers
