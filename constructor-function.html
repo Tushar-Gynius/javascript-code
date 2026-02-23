@@ -1,0 +1,24 @@
+<!doctype html>
+  <head>
+    <title>Constructor Function</title>
+  </head>
+  <body>
+    <p>Constructor Function: Constructor functions are used to create objects in javascript. The name of a constructor function should always be written in Pascal Notation: every word should start with a capital letter.</p>
+
+    <script>
+      // Constructor Function
+      function Person(name,age,gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+      }
+
+
+      var person = new Person("Tushar Gupta", 29, "Male");
+      console.log('Details is: ', person);
+      console.log('Name is: ', person.name);
+      console.log('Age is: ', person.age);
+      console.log('Gender is: ', person.gender);
+    </script>
+  </body>
+</html>

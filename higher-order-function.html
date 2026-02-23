@@ -1,0 +1,28 @@
+<!doctype html>
+  <head>
+    <title>Higher Order Function</title>
+  </head>
+  <body>
+    <p>Higher Order Function: Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.</p>
+  
+    <script>
+      // Higher Order Function
+      function higherOrder(fn) {
+        fn();
+      }
+        
+      higherOrder(function() { 
+        console.log("Higher Order Function - By Passing") 
+      });  
+
+      function higherOrder2() {
+        return function() {
+          return "Higher Order Function - By Returning";
+        }
+      }    
+
+      var x = higherOrder2();
+      console.log(x());
+    </script>
+  </body>
+</html>

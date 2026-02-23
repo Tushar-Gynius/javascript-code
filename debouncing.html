@@ -1,0 +1,32 @@
+<!doctype html>
+  <head>
+    <title>Debouncing</title>
+  </head>
+  <body>
+    <p>Debouncing: Debouncing ensures that a function is executed only after a certain delay, and only once if it’s called repeatedly in a short time. It’s useful for events that fire very frequently, like scroll, resize, or keyup.</p>
+
+    <input type="text" id="search" placeholder="Type Here..." />
+
+    <script>
+      // Debouncing
+      function searchQuery() {
+        console.log("Searching For:", document.getElementById("search").value);
+      }
+
+      function debounce(func, delay) {
+        let timer;
+        return function() {
+          const context = this;
+          const args = arguments;
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            func.apply(context, args);
+          }, delay);
+        };
+      }
+
+      const debouncedSearch = debounce(searchQuery, 500);
+      document.getElementById("search").addEventListener("keyup", debouncedSearch);
+    </script>
+  </body>
+</html>

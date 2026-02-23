@@ -1,0 +1,31 @@
+<!doctype html>
+  <head>
+    <title>Throttling</title>
+  </head>
+  <body>
+    <p>Throttling: Throttling ensures a function is called at most once in a specified time interval, no matter how many times the event is triggered. It’s useful for events that fire very frequently, like scroll or resize.</p>
+
+    <button id="btn">Click Me Fast!</button>
+
+    <script>
+      // Throttling
+      function clickHandler() {
+        console.log("Button Clicked At: ", new Date().toLocaleTimeString());
+      }
+
+      function throttle(func, limit) {
+        let lastTime = 0;
+        return function() {
+          const now = Date.now();
+          if(now - lastTime >= limit) {
+            func.apply(this, arguments);
+            lastTime = now;
+          }
+        };
+      }
+
+      const throttledClick = throttle(clickHandler, 2000);
+      document.getElementById("btn").addEventListener("click", throttledClick);
+    </script>
+  </body>
+</html>

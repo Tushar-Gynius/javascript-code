@@ -1,0 +1,30 @@
+<!doctype html>
+  <head>
+    <title>Event Propagation</title>
+  </head>
+  <body>
+    <p>Event Propagation: The full flow of an event through the DOM, including both capturing (parent → child) and bubbling (child → parent) phases.</p>
+  
+    <div id="parent">Parent Div
+      <button id="child">Click Me</button>
+    </div>
+
+    <script>
+      document.getElementById("parent").addEventListener("click", () => {
+        console.log("Parent Capturing");
+      }, true);
+
+      document.getElementById("child").addEventListener("click", () => {
+        console.log("Child Capturing");
+      }, true);
+
+      document.getElementById("child").addEventListener("click", () => {
+        console.log("Child Bubbling")
+      });
+
+      document.getElementById("parent").addEventListener("click", () => {
+        console.log("Parent Bubbling")
+      });
+    </script>
+  </body>
+</html>

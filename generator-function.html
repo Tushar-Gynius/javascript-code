@@ -1,0 +1,28 @@
+<!doctype html>
+  <head>
+    <title>Generator Function</title>
+  </head>
+  <body>
+    <p>Generator Function: They can be stopped midway and then continue from where they had stopped. Generator functions are declared with the function* keyword.</p>
+    <p><strong>or</strong></p>
+    <p>Generator Function: A generator function is a special type of function that can pause and resume its execution. It is written using function* and uses the yield keyword.</p>
+    <p><strong>or</strong></p>
+    <p>Generator Function: A generator function is a function that can pause using yield and continue later when .next() is called.</p>
+
+    <script>
+      // Generator Function
+      function* numbers() {
+        yield 1;
+        yield 2;
+        yield 3;
+      }
+
+      const gen = numbers();
+
+      console.log(gen.next()); // { value: 1, done: false }
+      console.log(gen.next()); // { value: 2, done: false }
+      console.log(gen.next()); // { value: 3, done: false }
+      console.log(gen.next()); // { value: undefined, done: true }
+    </script>
+  </body>
+</html>

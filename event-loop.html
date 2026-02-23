@@ -1,0 +1,27 @@
+<!doctype html>
+  <head>
+    <title>Event Loop</title>
+  </head>
+  <body>
+    <p>Event Loop: JavaScript can do only one thing at a time. But it can still handle things like waiting for timers or downloading data without stopping everything else. It does this using the event loop.</p>
+    <p><strong>How it works:</strong></p>
+    <ul>
+      <li>JavaScript runs your code line by line (this is called the call stack).</li>
+      <li>When it sees something that takes time (like setTimeout or fetching data), it tells the browser to handle it.</li>
+      <li>When that task is done, its result is put in a queue (waiting line).</li>
+      <li>The event loop checks if JavaScript is done with current work.</li>
+      <li>If yes, it takes the next task from the queue and runs it.</li>
+    </ul>
+    
+    <script>
+      // Event Loop
+      console.log("Start");
+
+      setTimeout(() => {
+        console.log("Waited!");
+      }, 0);
+
+      console.log("End");
+    </script>
+  </body>
+</html>

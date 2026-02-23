@@ -1,0 +1,24 @@
+<!doctype html>
+  <head>
+    <title>Shallow Copy - Deep Copy</title>
+  </head>
+  <body>
+    <p>Shallow Copy: A shallow copy copies only the first level. If the object contains another object inside it, the inner object is still shared (same reference).</p>
+    <p>Deep Copy: A deep copy copies all levels, including nested objects. Changes in the copied object do NOT affect the original.</p>
+    
+    <script>
+      // Shallow Copy - Deep Copy
+      let originalObj = {
+        name: "Tushar Gupta",
+        address: { city: "Kanpur" }
+      };
+
+      let shallowCopy = { ...originalObj };
+      let deepCopy = JSON.parse(JSON.stringify(originalObj));
+
+      originalObj.address.city = "Noida";
+      console.log('Shallow Copy: ', shallowCopy.address.city); // Noida
+      console.log('Deep Copy: ', deepCopy.address.city); // Kanpur
+    </script>
+  </body>
+</html>

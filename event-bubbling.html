@@ -1,0 +1,23 @@
+<!doctype html>
+  <head>
+    <title>Event Bubbling</title>
+  </head>
+  <body>
+    <p>Event Bubbling: Event Bubbling means the event starts from the child element (target) and then moves up to its parent elements.</p>
+
+    <div id="parent">Parent Div
+      <button id="child">Click Me</button>
+    </div>
+
+    <script>
+      // Event Bubbling
+      document.getElementById("parent").addEventListener("click", () => {
+        console.log("Parent Clicked");
+      });
+
+      document.getElementById("child").addEventListener("click", () => {
+        console.log("Child Clicked");
+      });
+    </script>
+  </body>
+</html>

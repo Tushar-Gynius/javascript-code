@@ -1,0 +1,25 @@
+<!doctype html>
+  <head>
+    <title>Event Delegation</title>
+  </head>
+  <body>
+    <p>Event Delegation: Event Delegation is a technique where you attach a single event listener to a parent element instead of multiple listeners on its child elements.</p>
+  
+    <div id="buttonContainer">
+    <button>Button 1</button>
+    <button>Button 2</button>
+    <button>Button 3</button>
+    </div>
+
+    <script>
+      // Event Delegation
+      const container = document.getElementById("buttonContainer");
+
+      container.addEventListener("click", (event) => {
+        if(event.target.tagName === "BUTTON") {
+          console.log("You Clicked: " + event.target.textContent);
+        }
+      });
+    </script>
+  </body>
+</html>

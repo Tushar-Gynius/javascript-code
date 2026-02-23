@@ -1,0 +1,22 @@
+<!doctype html>
+  <head>
+    <title>Callback Function</title>
+  </head>
+  <body>
+    <p>Callback Function: Functions that are used as an argument to another function are called callback functions.</p>
+
+    <script>
+      // Callback Function
+      function operation(sum) {
+        console.log('Multiplication is: ', sum * 2);
+      }
+
+      function operationOnSum(num1,num2,operation) {
+        var sum = num1 + num2;
+        operation(sum);
+      }
+
+      operationOnSum(3, 3, operation);
+    </script>
+  </body>
+</html>

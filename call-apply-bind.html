@@ -1,0 +1,37 @@
+<!doctype html>
+  <head>
+    <title>call, apply, bind</title>
+  </head>
+  <body>
+    <p>These three methods are used to manually set the value of this inside a function.</p>
+    <p>call(): Calls the function immediately and passes arguments normally.</p>
+    <p>apply(): Works like call(), but arguments are passed as an array.</p>
+    <p>bind(): Does not call immediately. It returns a new function with this fixed.</p>
+    
+    <script>
+      // call, apply, bind
+      let userDetails = {
+        name: "Tushar Gupta",
+        age: 29,
+        designation: "Software Engineer",
+      };
+
+      let printDetails = function(city, area) {
+        console.log(this.name + " from " + city + ", " + area);
+      };
+
+      printDetails.call(userDetails, "Kanpur", 'Noida'); // call
+
+      let userDetails2 = {
+        name: "Gupta Tushar",
+        age: 29,
+        designation: "Software Engineer",
+      };
+
+      printDetails.call(userDetails2, "Kanpur", 'Noida'); // call
+      printDetails.apply(userDetails2, ["Kanpur", 'Noida']); // apply
+      let bind = printDetails.bind(userDetails2, "Kanpur", 'Noida'); // bind
+      bind();
+    </script>
+  </body>
+</html>

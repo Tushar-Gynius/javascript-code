@@ -1,0 +1,23 @@
+<!doctype html>
+  <head>
+    <title>Event Capturing</title>
+  </head>
+  <body>
+    <p>Event Capturing: The event moves from the outer (parent) element down to the target element (child).</p>
+  
+    <div id="parent">Parent Div
+      <button id="child">Click Me</button>
+    </div>
+
+    <script>
+      // Event Capturing
+      document.getElementById("parent").addEventListener("click", () => {
+        console.log("Parent Clicked");
+      }, true);
+
+      document.getElementById("child").addEventListener("click", () => {
+        console.log("Child Clicked");
+      }, true);
+    </script>
+  </body>
+</html>
